@@ -6,7 +6,7 @@ function App() {
     <Router>
        <Routes>
         <Route path="/" elemenet= {<Home/>}/>
-       
+        <Route path="/Search" elemenet= {<Search/>}/>
        
        </Routes>
 
