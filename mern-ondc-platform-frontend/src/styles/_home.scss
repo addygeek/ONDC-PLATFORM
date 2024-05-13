@@ -1,0 +1,92 @@
+.home {
+  padding: 2rem 5%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 4rem);
+  width: 100%;
+
+  > section {
+    width: 100%;
+    height: 5.75rem;
+    margin: auto;
+    background: url("../assets/cover.jpg") no-repeat center / cover;
+  }
+
+  > h1 {
+    @include heading(1px);
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .findmore {
+      font-size: 1rem;
+    }
+  }
+
+  > main {
+    width: 100%;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr)); // Adjust the column width as needed
+    gap: 1rem;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.product-card {
+  width: 100%;
+  height: 25rem; // Adjust the height if needed
+  padding: 1rem;
+  position: relative;
+  background-color: white;
+
+  &:hover > div {
+    opacity: 1;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 1rem 0; // Adjust margin as needed
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  > div {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #0000006b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 100%;
+      border: none;
+      background-color: $color3;
+      cursor: pointer;
+      color: $color1;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: rotate(20deg); // Corrected rotate property
+      }
+    }
+  }
+}

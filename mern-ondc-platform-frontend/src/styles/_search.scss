@@ -1,0 +1,97 @@
+.product-search-page {
+  padding: 2rem;
+  display: flex;
+  min-height: calc(100vh - 6.5vh);
+
+  > aside {
+    min-width: 20rem;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.247);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    > h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    > div {
+      margin-bottom: 1rem;
+
+      > h4 {
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+
+      > input,
+      > select {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 10px;
+        border: 1px solid rgba(154, 154, 154, 0.38);
+        background-color: white;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  > main {
+    width: 100%;
+    padding: 0 2rem;
+
+    > h1 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    > input {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid rgba(154, 154, 154, 0.38);
+      background-color: white;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .search-product-lists {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      height: calc(100% - 10rem);
+      overflow-y: auto;
+
+      .product-card {
+        width: calc(25% - 1rem); // Adjust width to fit four cards per row
+        margin-bottom: 1rem;
+
+        img {
+          width: 100%; // Ensure the image fills the card container
+          height: auto; // Maintain aspect ratio
+          border-radius: 10px; // Add border radius for rounded corners
+        }
+      }
+    }
+
+    article {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+
+      > button {
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        background-color: #2196f3;
+        color: white;
+        border: none;
+        cursor: pointer;
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
