@@ -33,11 +33,17 @@ const ProductDetailsPage: React.FC = () => {
  
  const dispatch = useDispatch();
 
- const addToCartHandler = (cartItem: CartItem) => {
-   if (cartItem.stock < 1) return toast.error("Out of Stock");
-   dispatch(addToCart(cartItem));
-   toast.success("Added to cart");
- };
+//  const addToCartHandler = (cartItem: CartItem) => {
+//    if (cartItem.stock < 1) return toast.error("Out of Stock");
+//    dispatch(addToCart(cartItem));
+//    toast.success("Added to cart");
+//  };
+ 
+ const addToCartHandler = (trur) => {
+  if (true) return toast.success("Added to Cart");
+  dispatch(addToCart(cartItem));
+  toast.success("Added to cart");
+};
  const CartIcon = () => {
     const cartItems = useSelector((state: RootState) => state.cart.items);
 
@@ -81,10 +87,15 @@ const ProductDetailsPage: React.FC = () => {
   if (error) return <p className="error-message">{error}</p>;
 
   return (
+
     <div className="product-details">
       {product ? (
         <>
+        <div className="productfull">
+          <div className="image-container">
           <img src={`${import.meta.env.VITE_SERVER}/${product.photo}`} alt={product.name} className="product-image" />
+          </div>
+
           <div className="product-info">
             <h2>{product.name}</h2>
     
@@ -93,14 +104,18 @@ const ProductDetailsPage: React.FC = () => {
             <p className="description">Category: {product.category}</p>
             {/* Render other essential details here as needed */}
             <div dangerouslySetInnerHTML={{ __html: product.details }} /> 
-            <button className= "cartbtn" onClick={() => handleProductClick(i._id)}> Add to cart </button>
+            <button className= "cartbtn" onClick={() => addToCartHandler()}> Add to cart </button>
             {/* <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Green</button> */}
             {/* ... (ratings, reviews, Add to Cart, and Buy buttons) */}
           </div>
+        </div>
+        
         </>
       ) : (
         <p>Product not found.</p>
       )}
+    
+    
     </div>
   );
 };
